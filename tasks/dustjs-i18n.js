@@ -55,7 +55,7 @@ module.exports = function (grunt) {
         }
 
         contentPath = contentPath.map(function (cp) {
-            var regexp = new RegExp('([' + path.sep + ']?)$');
+            var regexp = new RegExp('([' + path.sep.replace('\\', '\\\\') + ']?)$');
             if (!endsWith(cp, pathName)) {
                 return cp.replace(regexp, pathName);
             }
